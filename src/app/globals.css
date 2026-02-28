@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* ===== MERCADO SACRO — Design Tokens ===== */
+
+:root {
+  /* Backgrounds */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F5F3F0;
+  --bg-tertiary: #EDE9E3;
+
+  /* Accent */
+  --accent-primary: #2C5282;
+  --accent-primary-hover: #1A365D;
+  --accent-secondary: #D4A843;
+  --accent-tertiary: #4A90D9;
+
+  /* Text */
+  --text-primary: #1A1A2E;
+  --text-secondary: #4A5568;
+  --text-tertiary: #A0AEC0;
+
+  /* Status */
+  --color-success: #38A169;
+  --color-warning: #D69E2E;
+  --color-error: #C53030;
+  --color-sale: #E53E3E;
+
+  /* Layout */
+  --header-dark: #1A202C;
+  --white: #FFFFFF;
+  --border: #E2E8F0;
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+
+  --color-bg-primary: var(--bg-primary);
+  --color-bg-secondary: var(--bg-secondary);
+  --color-bg-tertiary: var(--bg-tertiary);
+
+  --color-accent-primary: var(--accent-primary);
+  --color-accent-primary-hover: var(--accent-primary-hover);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-sale: var(--color-sale);
+
+  --color-header-dark: var(--header-dark);
+  --color-border: var(--border);
+
+  --font-heading: var(--font-merriweather);
+  --font-body: var(--font-inter);
+  --font-logo: var(--font-cinzel);
+  --font-accent: var(--font-cormorant);
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}
+
+/* Hide scrollbar on horizontal scroll containers */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
