@@ -5,9 +5,11 @@ import { ShoppingCart, Zap, Heart, Truck, ShieldCheck, RotateCcw, Minus, Plus } 
 import { formatPrice, calculateInstallment, calculatePixPrice } from '@/lib/utils';
 import { useCart } from '@/contexts/CartContext';
 import { useFavorites } from '@/contexts/FavoritesContext';
+import { useToast } from '@/contexts/ToastContext';
 import { MAX_INSTALLMENTS, PIX_DISCOUNT_PERCENT, FREE_SHIPPING_THRESHOLD } from '@/lib/constants';
 import Badge from '@/components/ui/Badge';
 import StarRating from '@/components/ui/StarRating';
+import ShippingCalculator from '@/components/cart/ShippingCalculator';
 import type { Product } from '@/types';
 
 interface ProductInfoProps {
@@ -16,18 +18,17 @@ interface ProductInfoProps {
 
 export default function ProductInfo({ product }: ProductInfoProps) {
   const [quantity, setQuantity] = useState(1);
-  const [cep, setCep] = useState('');
   const { addToCart } = useCart();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { showToast } = useToast();
   const favorited = isFavorite(product.id);
 
   const pixPrice = calculatePixPrice(product.price);
   const installmentText = calculateInstallment(product.price, MAX_INSTALLMENTS);
 
   const handleAddToCart = () => {
-    for (let i = 0; i < quantity; i++) {
-      addToCart(product);
-    }
+    addToCart(product, quantity);
+    showToast(`${product.shortName} adicionado ao carrinho`, 'cart');
   };
 
   return (
@@ -164,7 +165,13 @@ export default function ProductInfo({ product }: ProductInfoProps) {
           Adicionar ao Carrinho
         </button>
         <button
-          onClick={() => toggleFavorite(product.id)}
+          onClick={() => {
+            toggleFavorite(product.id);
+            showToast(
+              favorited ? 'Removido dos favoritos' : 'Adicionado aos favoritos',
+              favorited ? 'info' : 'favorite'
+            );
+          }}
           className="w-full flex items-center justify-center gap-2 border border-border py-2.5 rounded-md text-sm text-text-secondary hover:border-burgundy hover:text-burgundy transition-colors"
         >
           <Heart size={16} className={favorited ? 'fill-burgundy text-burgundy' : ''} />
@@ -174,25 +181,11 @@ export default function ProductInfo({ product }: ProductInfoProps) {
 
       {/* CEP calculator */}
       <div className="border border-border rounded-lg p-4">
-        <p className="text-sm font-medium text-text-primary mb-2">Calcular frete:</p>
-        <div className="flex gap-2">
-          <input
-            type="text"
-            placeholder="Digite seu CEP"
-            value={cep}
-            onChange={(e) => setCep(e.target.value.replace(/\D/g, '').slice(0, 8))}
-            className="flex-1 border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold"
-          />
-          <button className="px-4 py-2 bg-bg-secondary text-text-primary rounded-md text-sm font-medium hover:bg-gold-light transition-colors">
-            Calcular
-          </button>
-        </div>
-        {product.price >= FREE_SHIPPING_THRESHOLD && (
-          <p className="text-xs text-success mt-2 flex items-center gap-1">
-            <Truck size={14} />
-            Frete grátis para este produto!
-          </p>
-        )}
+        <ShippingCalculator
+          subtotal={product.price * quantity}
+          freeShipping={product.price * quantity >= FREE_SHIPPING_THRESHOLD}
+          onShippingChange={() => {}}
+        />
       </div>
 
       {/* Trust badges */}

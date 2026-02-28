@@ -5,6 +5,7 @@ import { Menu, Search, Heart, ShoppingCart, User } from 'lucide-react';
 import { useState } from 'react';
 import SearchBar from './SearchBar';
 import MobileMenu from './MobileMenu';
+import CartDrawer from '@/components/cart/CartDrawer';
 import { NAVIGATION_CATEGORIES, FREE_SHIPPING_THRESHOLD, MAX_INSTALLMENTS } from '@/lib/constants';
 import { useCart } from '@/contexts/CartContext';
 import { formatPrice } from '@/lib/utils';
@@ -12,6 +13,7 @@ import { formatPrice } from '@/lib/utils';
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSearchOpen, setMobileSearchOpen] = useState(false);
+  const [cartDrawerOpen, setCartDrawerOpen] = useState(false);
   const { state } = useCart();
 
   const totalItems = state.items.reduce((sum, item) => sum + item.quantity, 0);
@@ -73,7 +75,7 @@ export default function Header() {
 
               {/* Favorites */}
               <Link
-                href="/conta"
+                href="/favoritos"
                 className="p-2 hover:bg-bg-secondary rounded-lg transition-colors text-text-secondary hover:text-text-primary"
                 aria-label="Favoritos"
               >
@@ -81,8 +83,8 @@ export default function Header() {
               </Link>
 
               {/* Cart */}
-              <Link
-                href="/carrinho"
+              <button
+                onClick={() => setCartDrawerOpen(true)}
                 className="relative p-2 hover:bg-bg-secondary rounded-lg transition-colors text-text-secondary hover:text-text-primary"
                 aria-label="Carrinho"
               >
@@ -92,7 +94,7 @@ export default function Header() {
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -125,6 +127,9 @@ export default function Header() {
 
       {/* Mobile menu */}
       <MobileMenu isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+
+      {/* Cart drawer */}
+      <CartDrawer isOpen={cartDrawerOpen} onClose={() => setCartDrawerOpen(false)} />
     </>
   );
 }

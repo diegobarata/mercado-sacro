@@ -2,7 +2,7 @@
 
 ---
 
-## Status Atual: FASE 2 CONCLUÍDA ✅
+## Status Atual: FASE 3 CONCLUÍDA ✅
 
 ---
 
@@ -69,14 +69,19 @@ E-commerce católico generalista estilo Mercado Livre/Amazon, com identidade vis
 - `src/components/product/`: ProductGallery, ProductInfo, ProductTabs, RelatedProducts
 - `src/app/categoria/[slug]/page.tsx`, `src/app/produto/[slug]/page.tsx`, `src/app/busca/page.tsx`
 
-### FASE 3 — Carrinho e Funcionalidades ⬜ (próxima)
-- [ ] Página de carrinho `/carrinho` com edição de quantidade, remoção, input de cupom, resumo
-- [ ] CartDrawer slide-in (mobile) animado com Framer Motion
-- [ ] Página de favoritos `/favoritos` com grid de produtos salvos
-- [ ] Cálculo de frete por CEP mockado (integração ViaCEP visual)
-- [ ] Toast notifications ao adicionar ao carrinho / favoritos
+### FASE 3 — Carrinho e Funcionalidades ✅
+- [x] Página de carrinho `/carrinho` com edição de quantidade, remoção, input de cupom, resumo
+- [x] CartDrawer slide-in (mobile) animado com Framer Motion
+- [x] Página de favoritos `/favoritos` com grid de produtos salvos
+- [x] Cálculo de frete por CEP mockado (integração ViaCEP visual)
+- [x] Toast notifications ao adicionar ao carrinho / favoritos
 
-### FASE 4 — Checkout e Conta
+**Componentes criados:**
+- `src/components/cart/`: CartDrawer, ShippingCalculator
+- `src/contexts/ToastContext.tsx`: Sistema global de toasts com tipos cart/favorite/success/error
+- `src/app/carrinho/page.tsx`, `src/app/favoritos/page.tsx`
+
+### FASE 4 — Checkout e Conta ⬜ (próxima)
 - [ ] Checkout multi-step `/checkout`: identificação → endereço → frete → pagamento → confirmação
 - [ ] Progress bar de steps no topo
 - [ ] Formulário com autocompletar por CEP (ViaCEP)
@@ -101,25 +106,27 @@ E-commerce católico generalista estilo Mercado Livre/Amazon, com identidade vis
 
 ---
 
-## PALETA DE CORES
+## PALETA DE CORES — Sacra Heritage
 
 | Função | Nome | HEX |
 |--------|------|-----|
-| Background Primary | Alabaster White | #FAFAFA |
-| Background Secondary | Warm Gray | #F5F3F0 |
-| Background Tertiary | Soft Linen | #EDE9E3 |
-| Accent Primary | Sacred Blue | #2C5282 |
-| Accent Primary Hover | Deep Blue | #1A365D |
-| Accent Secondary | Warm Gold | #D4A843 |
-| Accent Tertiary | Marian Blue | #4A90D9 |
-| Text Primary | Dark Charcoal | #1A1A2E |
-| Text Secondary | Medium Gray | #4A5568 |
-| Text Tertiary | Light Gray | #A0AEC0 |
-| Success | Holy Green | #38A169 |
-| Warning | Amber | #D69E2E |
+| Background Primary | Alabaster Warm | #FAF7F2 |
+| Background Secondary | Warm Linen | #F3EDE4 |
+| Background Dark | Deep Black | #0D0D0D |
+| Background Dark Surface | Charcoal | #1C1C1E |
+| Gold (Accent Primary) | Sacred Gold | #C9A84C |
+| Gold Hover | Deep Gold | #B8923A |
+| Gold Light | Soft Gold | #E8D5A0 |
+| Text Primary | Near Black | #1A1A1A |
+| Text Secondary | Warm Gray | #4A4A4A |
+| Text Tertiary | Muted Gray | #8A8A8A |
+| Burgundy (Acento) | Wine Red | #6B1D2A |
+| Sacred Green (Acento) | Forest Green | #2D5A3D |
+| Success | Sacred Green | #2D5A3D |
+| Warning | Sacred Gold | #C9A84C |
 | Error | Cardinal Red | #C53030 |
-| Sale | Liturgical Red | #E53E3E |
-| Dark Header | Navy Catholic | #1A202C |
+| Sale | Burgundy | #6B1D2A |
+| Border | Warm Neutral | #E2DDD4 |
 
 ---
 
@@ -140,9 +147,9 @@ E-commerce católico generalista estilo Mercado Livre/Amazon, com identidade vis
 mercado-sacro/
 ├── public/img/{products,categories,banners,brand}/
 ├── src/
-│   ├── app/          # App Router pages
+│   ├── app/          # App Router pages (/, busca, categoria, produto, carrinho, favoritos)
 │   ├── components/   # ui, layout, home, product, catalog, cart
-│   ├── contexts/     # CartContext, FavoritesContext
+│   ├── contexts/     # CartContext, FavoritesContext, ToastContext
 │   ├── hooks/        # useCart, useFavorites
 │   ├── lib/          # utils, constants, animations
 │   ├── data/         # products, categories, banners, reviews

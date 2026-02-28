@@ -9,6 +9,7 @@ import StarRating from '@/components/ui/StarRating';
 import { formatPrice, calculateInstallment } from '@/lib/utils';
 import { useCart } from '@/contexts/CartContext';
 import { useFavorites } from '@/contexts/FavoritesContext';
+import { useToast } from '@/contexts/ToastContext';
 import type { Product } from '@/types';
 
 interface ProductCardProps {
@@ -18,6 +19,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
   const { toggleFavorite, isFavorite } = useFavorites();
+  const { showToast } = useToast();
   const favorited = isFavorite(product.id);
 
   return (
@@ -38,7 +40,13 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* Favorite button */}
       <button
-        onClick={() => toggleFavorite(product.id)}
+        onClick={() => {
+          toggleFavorite(product.id);
+          showToast(
+            favorited ? 'Removido dos favoritos' : 'Adicionado aos favoritos',
+            favorited ? 'info' : 'favorite'
+          );
+        }}
         className="absolute top-2 right-2 z-10 p-1.5 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors"
         aria-label={favorited ? 'Remover dos favoritos' : 'Adicionar aos favoritos'}
       >
@@ -96,7 +104,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Add to cart */}
         <button
-          onClick={() => addToCart(product)}
+          onClick={() => {
+            addToCart(product);
+            showToast(`${product.shortName} adicionado ao carrinho`, 'cart');
+          }}
           className="w-full mt-2 flex items-center justify-center gap-2 bg-gold text-white py-2 rounded-md text-sm font-medium
             hover:bg-gold-hover transition-colors"
         >
