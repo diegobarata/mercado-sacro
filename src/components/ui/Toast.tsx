@@ -24,7 +24,7 @@ const styles = {
   success: 'bg-success text-white',
   error: 'bg-error text-white',
   warning: 'bg-warning text-white',
-  info: 'bg-accent-primary text-white',
+  info: 'bg-gold text-white',
 };
 
 export default function Toast({ message, type = 'success', isVisible, onClose, duration = 3000 }: ToastProps) {

@@ -21,15 +21,15 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
           'disabled:opacity-50 disabled:cursor-not-allowed',
           {
             // Variants
-            'bg-accent-primary text-white hover:bg-accent-primary-hover focus:ring-accent-primary':
+            'bg-gold text-white hover:bg-gold-hover focus:ring-gold':
               variant === 'primary',
-            'bg-bg-secondary text-text-primary hover:bg-bg-tertiary focus:ring-accent-primary':
+            'bg-bg-secondary text-text-primary hover:bg-gold-light focus:ring-gold':
               variant === 'secondary',
-            'border-2 border-accent-primary text-accent-primary hover:bg-accent-primary hover:text-white focus:ring-accent-primary':
+            'border-2 border-gold text-gold hover:bg-gold hover:text-white focus:ring-gold':
               variant === 'outline',
-            'text-text-secondary hover:text-text-primary hover:bg-bg-secondary focus:ring-accent-primary':
+            'text-text-secondary hover:text-text-primary hover:bg-bg-secondary focus:ring-gold':
               variant === 'ghost',
-            'bg-sale text-white hover:bg-red-700 focus:ring-sale':
+            'bg-burgundy text-white hover:bg-burgundy/90 focus:ring-burgundy':
               variant === 'sale',
             // Sizes
             'px-3 py-1.5 text-sm': size === 'sm',

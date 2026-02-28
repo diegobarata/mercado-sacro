@@ -51,7 +51,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
       {/* Rating */}
       <div className="flex items-center gap-3">
         <StarRating rating={product.rating} size={18} />
-        <a href="#avaliacoes" className="text-sm text-accent-primary hover:underline">
+        <a href="#avaliacoes" className="text-sm text-gold hover:underline">
           Ver {product.reviewCount} avaliações
         </a>
       </div>
@@ -92,7 +92,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
             {product.colors.map((color) => (
               <button
                 key={color}
-                className="px-3 py-1.5 border border-border rounded-md text-sm text-text-secondary hover:border-accent-primary hover:text-accent-primary transition-colors"
+                className="px-3 py-1.5 border border-border rounded-md text-sm text-text-secondary hover:border-gold hover:text-gold transition-colors"
               >
                 {color}
               </button>
@@ -107,7 +107,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
             {product.sizes.map((size) => (
               <button
                 key={size}
-                className="px-3 py-1.5 border border-border rounded-md text-sm text-text-secondary hover:border-accent-primary hover:text-accent-primary transition-colors"
+                className="px-3 py-1.5 border border-border rounded-md text-sm text-text-secondary hover:border-gold hover:text-gold transition-colors"
               >
                 {size}
               </button>
@@ -139,7 +139,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
           </button>
         </div>
         {product.stockQuantity <= 5 && product.inStock && (
-          <p className="text-xs text-sale mt-1">
+          <p className="text-xs text-burgundy mt-1">
             Apenas {product.stockQuantity} em estoque!
           </p>
         )}
@@ -150,7 +150,7 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <button
           onClick={handleAddToCart}
           disabled={!product.inStock}
-          className="w-full flex items-center justify-center gap-2 bg-accent-primary text-white py-3.5 rounded-md text-base font-semibold hover:bg-accent-primary-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center gap-2 bg-gold text-white py-3.5 rounded-md text-base font-semibold hover:bg-gold-hover transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <Zap size={18} />
           COMPRAR AGORA
@@ -158,16 +158,16 @@ export default function ProductInfo({ product }: ProductInfoProps) {
         <button
           onClick={handleAddToCart}
           disabled={!product.inStock}
-          className="w-full flex items-center justify-center gap-2 border-2 border-accent-primary text-accent-primary py-3 rounded-md text-sm font-medium hover:bg-accent-primary/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full flex items-center justify-center gap-2 border-2 border-gold text-gold py-3 rounded-md text-sm font-medium hover:bg-gold/5 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ShoppingCart size={18} />
           Adicionar ao Carrinho
         </button>
         <button
           onClick={() => toggleFavorite(product.id)}
-          className="w-full flex items-center justify-center gap-2 border border-border py-2.5 rounded-md text-sm text-text-secondary hover:border-sale hover:text-sale transition-colors"
+          className="w-full flex items-center justify-center gap-2 border border-border py-2.5 rounded-md text-sm text-text-secondary hover:border-burgundy hover:text-burgundy transition-colors"
         >
-          <Heart size={16} className={favorited ? 'fill-sale text-sale' : ''} />
+          <Heart size={16} className={favorited ? 'fill-burgundy text-burgundy' : ''} />
           {favorited ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos'}
         </button>
       </div>
@@ -181,9 +181,9 @@ export default function ProductInfo({ product }: ProductInfoProps) {
             placeholder="Digite seu CEP"
             value={cep}
             onChange={(e) => setCep(e.target.value.replace(/\D/g, '').slice(0, 8))}
-            className="flex-1 border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent-primary"
+            className="flex-1 border border-border rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-gold"
           />
-          <button className="px-4 py-2 bg-bg-secondary text-text-primary rounded-md text-sm font-medium hover:bg-bg-tertiary transition-colors">
+          <button className="px-4 py-2 bg-bg-secondary text-text-primary rounded-md text-sm font-medium hover:bg-gold-light transition-colors">
             Calcular
           </button>
         </div>
@@ -198,15 +198,15 @@ export default function ProductInfo({ product }: ProductInfoProps) {
       {/* Trust badges */}
       <div className="grid grid-cols-3 gap-3">
         <div className="flex flex-col items-center gap-1 text-center">
-          <ShieldCheck size={20} className="text-accent-primary" />
+          <ShieldCheck size={20} className="text-gold" />
           <span className="text-xs text-text-secondary">Compra segura</span>
         </div>
         <div className="flex flex-col items-center gap-1 text-center">
-          <Truck size={20} className="text-accent-primary" />
+          <Truck size={20} className="text-gold" />
           <span className="text-xs text-text-secondary">Produto original</span>
         </div>
         <div className="flex flex-col items-center gap-1 text-center">
-          <RotateCcw size={20} className="text-accent-primary" />
+          <RotateCcw size={20} className="text-gold" />
           <span className="text-xs text-text-secondary">Devolução grátis</span>
         </div>
       </div>

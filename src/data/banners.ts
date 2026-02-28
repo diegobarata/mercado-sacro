@@ -16,7 +16,7 @@ export const banners: Banner[] = [
     subtitle: 'Artigos religiosos com os melhores preços e entrega para todo o Brasil.',
     cta: 'Ver Ofertas',
     ctaLink: '/categoria/promocoes',
-    bgColor: '#2C5282',
+    bgColor: '#0D0D0D',
     textColor: '#FFFFFF',
   },
   {
@@ -25,7 +25,7 @@ export const banners: Banner[] = [
     subtitle: 'Kits especiais com terço, Bíblia e vela. A partir de R$145.',
     cta: 'Comprar Agora',
     ctaLink: '/categoria/presentes',
-    bgColor: '#1A365D',
+    bgColor: '#1C1C1E',
     textColor: '#FFFFFF',
   },
   {
@@ -34,8 +34,8 @@ export const banners: Banner[] = [
     subtitle: 'De madeira a prata 925 — até 30% de desconto nesta semana.',
     cta: 'Aproveitar',
     ctaLink: '/categoria/tercos',
-    bgColor: '#F5F3F0',
-    textColor: '#1A1A2E',
+    bgColor: '#F0EBE1',
+    textColor: '#1A1A1A',
   },
   {
     id: 'banner-4',
@@ -43,7 +43,7 @@ export const banners: Banner[] = [
     subtitle: 'Edições especiais para aprofundar sua fé. Parcele em até 12x.',
     cta: 'Conhecer',
     ctaLink: '/categoria/biblias',
-    bgColor: '#1A202C',
+    bgColor: '#0D0D0D',
     textColor: '#FFFFFF',
   },
 ];

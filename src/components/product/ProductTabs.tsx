@@ -50,7 +50,7 @@ export default function ProductTabs({ product, reviews }: ProductTabsProps) {
               className={cn(
                 'px-4 md:px-6 py-3 text-sm font-medium whitespace-nowrap border-b-2 transition-colors',
                 activeTab === tab.key
-                  ? 'border-accent-primary text-accent-primary'
+                  ? 'border-gold text-gold'
                   : 'border-transparent text-text-tertiary hover:text-text-secondary'
               )}
             >
@@ -139,7 +139,7 @@ export default function ProductTabs({ product, reviews }: ProductTabsProps) {
                 {starDist.map((d) => (
                   <div key={d.star} className="flex items-center gap-2">
                     <span className="text-xs text-text-secondary w-8">{d.star}★</span>
-                    <div className="flex-1 h-2 bg-bg-tertiary rounded-full overflow-hidden">
+                    <div className="flex-1 h-2 bg-gold-light rounded-full overflow-hidden">
                       <div
                         className="h-full bg-warning rounded-full transition-all"
                         style={{ width: `${d.pct}%` }}
@@ -194,7 +194,7 @@ export default function ProductTabs({ product, reviews }: ProductTabsProps) {
                       </div>
                     )}
                     <div className="mt-2">
-                      <button className="flex items-center gap-1 text-xs text-text-tertiary hover:text-accent-primary transition-colors">
+                      <button className="flex items-center gap-1 text-xs text-text-tertiary hover:text-gold transition-colors">
                         <ThumbsUp size={12} />
                         Útil ({review.helpful})
                       </button>

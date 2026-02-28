@@ -4,12 +4,12 @@ import { SITE_NAME, NAVIGATION_CATEGORIES, SOCIAL_LINKS, PAYMENT_METHODS } from 
 
 export default function Footer() {
   return (
-    <footer className="bg-header-dark text-white">
+    <footer className="bg-bg-dark text-white">
       <div className="max-w-7xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <span className="font-logo text-xl font-bold tracking-[0.15em] text-accent-secondary">
+            <span className="font-logo text-xl font-bold tracking-[0.15em] text-gold">
               {SITE_NAME.toUpperCase()}
             </span>
             <p className="mt-3 text-sm text-gray-400 leading-relaxed font-accent italic">

@@ -39,7 +39,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
             priority
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              target.src = `https://placehold.co/600x600/F5F3F0/4A5568?text=${encodeURIComponent(productName)}`;
+              target.src = `https://placehold.co/600x600/F0EBE1/4A4A4A?text=${encodeURIComponent(productName)}`;
             }}
           />
           <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/5">
@@ -59,7 +59,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
                 className={cn(
                   'relative w-16 h-16 md:w-20 md:h-20 shrink-0 rounded-md overflow-hidden border-2 transition-colors',
                   idx === selectedIndex
-                    ? 'border-accent-primary'
+                    ? 'border-gold'
                     : 'border-transparent hover:border-border'
                 )}
               >
@@ -71,7 +71,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
                   className="object-contain p-1"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = `https://placehold.co/100x100/F5F3F0/4A5568?text=${idx + 1}`;
+                    target.src = `https://placehold.co/100x100/F0EBE1/4A4A4A?text=${idx + 1}`;
                   }}
                 />
               </button>
@@ -146,7 +146,7 @@ export default function ProductGallery({ images, productName }: ProductGalleryPr
                 className="object-contain"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = `https://placehold.co/800x800/F5F3F0/4A5568?text=${encodeURIComponent(productName)}`;
+                  target.src = `https://placehold.co/800x800/F0EBE1/4A4A4A?text=${encodeURIComponent(productName)}`;
                 }}
               />
             </div>

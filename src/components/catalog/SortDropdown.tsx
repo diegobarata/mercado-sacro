@@ -48,8 +48,8 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
         onClick={() => setOpen(!open)}
         className={cn(
           'flex items-center gap-2 px-3 py-2 border border-border rounded-md text-sm',
-          'bg-white hover:border-accent-primary transition-colors',
-          open && 'border-accent-primary'
+          'bg-white hover:border-gold transition-colors',
+          open && 'border-gold'
         )}
       >
         <span className="text-text-tertiary">Ordenar por:</span>
@@ -72,7 +72,7 @@ export default function SortDropdown({ value, onChange }: SortDropdownProps) {
               className={cn(
                 'w-full text-left px-3 py-2 text-sm hover:bg-bg-secondary transition-colors',
                 option.value === value
-                  ? 'text-accent-primary font-medium bg-accent-primary/5'
+                  ? 'text-gold font-medium bg-gold/5'
                   : 'text-text-primary'
               )}
             >

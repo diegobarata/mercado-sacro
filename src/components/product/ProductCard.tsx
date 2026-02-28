@@ -22,8 +22,8 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   return (
     <motion.div
-      whileHover={{ y: -2, boxShadow: '0 8px 30px rgba(0,0,0,0.08)' }}
-      className="group relative bg-white rounded-lg border border-border overflow-hidden transition-all duration-200"
+      whileHover={{ y: -2, boxShadow: '0 6px 20px rgba(0,0,0,0.06)' }}
+      className="group relative bg-white rounded-lg border border-border/60 overflow-hidden transition-all duration-200"
     >
       {/* Badge */}
       {product.badge && (
@@ -44,7 +44,7 @@ export default function ProductCard({ product }: ProductCardProps) {
       >
         <Heart
           size={18}
-          className={favorited ? 'fill-sale text-sale' : 'text-text-tertiary'}
+          className={favorited ? 'fill-burgundy text-burgundy' : 'text-text-tertiary'}
         />
       </button>
 
@@ -60,7 +60,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               className="object-contain transition-transform duration-300 group-hover:scale-105"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = `https://placehold.co/400x400/F5F3F0/4A5568?text=${encodeURIComponent(product.shortName)}`;
+                target.src = `https://placehold.co/400x400/F0EBE1/4A4A4A?text=${encodeURIComponent(product.shortName)}`;
               }}
             />
           </div>
@@ -74,7 +74,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Name */}
         <Link href={`/produto/${product.slug}`}>
-          <h3 className="text-sm font-medium text-text-primary line-clamp-2 hover:text-accent-primary transition-colors leading-snug">
+          <h3 className="text-sm font-medium text-text-primary line-clamp-2 hover:text-gold transition-colors leading-snug">
             {product.name}
           </h3>
         </Link>
@@ -97,8 +97,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         {/* Add to cart */}
         <button
           onClick={() => addToCart(product)}
-          className="w-full mt-2 flex items-center justify-center gap-2 bg-accent-primary text-white py-2 rounded-md text-sm font-medium
-            hover:bg-accent-primary-hover transition-colors"
+          className="w-full mt-2 flex items-center justify-center gap-2 bg-gold text-white py-2 rounded-md text-sm font-medium
+            hover:bg-gold-hover transition-colors"
         >
           <ShoppingCart size={16} />
           <span>Adicionar</span>

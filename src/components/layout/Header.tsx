@@ -19,7 +19,7 @@ export default function Header() {
   return (
     <>
       {/* Top bar */}
-      <div className="bg-header-dark text-white text-xs py-1.5">
+      <div className="bg-bg-dark text-white text-xs py-1.5">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-center gap-4 md:justify-between">
           <span>Frete grátis acima de {formatPrice(FREE_SHIPPING_THRESHOLD)}</span>
           <span className="hidden md:inline">Parcele em até {MAX_INSTALLMENTS}x sem juros</span>
@@ -27,7 +27,7 @@ export default function Header() {
       </div>
 
       {/* Main header */}
-      <header className="sticky top-0 z-30 bg-white border-b border-border shadow-sm">
+      <header className="sticky top-0 z-30 bg-white border-b border-border/80 shadow-sm">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex items-center h-14 md:h-16 gap-4">
             {/* Mobile hamburger */}
@@ -41,7 +41,7 @@ export default function Header() {
 
             {/* Logo */}
             <Link href="/" className="flex-shrink-0">
-              <span className="font-logo text-lg md:text-xl font-bold tracking-[0.15em] text-accent-primary">
+              <span className="font-logo text-lg md:text-xl font-bold tracking-[0.15em] text-gold">
                 MERCADO SACRO
               </span>
             </Link>
@@ -88,7 +88,7 @@ export default function Header() {
               >
                 <ShoppingCart size={22} />
                 {totalItems > 0 && (
-                  <span className="absolute -top-0.5 -right-0.5 bg-sale text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
+                  <span className="absolute -top-0.5 -right-0.5 bg-burgundy text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">
                     {totalItems > 99 ? '99+' : totalItems}
                   </span>
                 )}
@@ -105,14 +105,14 @@ export default function Header() {
         </div>
 
         {/* Category nav (desktop) */}
-        <nav className="hidden lg:block border-t border-border bg-white">
+        <nav className="hidden lg:block border-t border-border/60 bg-white">
           <div className="max-w-7xl mx-auto px-4">
             <ul className="flex items-center gap-1 py-1">
               {NAVIGATION_CATEGORIES.map((cat) => (
                 <li key={cat.slug}>
                   <Link
                     href={`/categoria/${cat.slug}`}
-                    className="block px-3 py-2 text-sm font-medium text-text-secondary hover:text-accent-primary hover:bg-bg-secondary rounded-md transition-colors"
+                    className="block px-3 py-2 text-sm font-medium text-text-secondary hover:text-gold hover:bg-bg-secondary rounded-md transition-colors"
                   >
                     {cat.name}
                   </Link>

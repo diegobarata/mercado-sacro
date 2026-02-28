@@ -85,7 +85,7 @@ export default function FilterSidebar({
         {activeFilterCount > 0 && (
           <button
             onClick={clearAll}
-            className="text-xs text-accent-primary hover:underline flex items-center gap-1"
+            className="text-xs text-gold hover:underline flex items-center gap-1"
           >
             <X size={12} />
             Limpar ({activeFilterCount})
@@ -120,7 +120,7 @@ export default function FilterSidebar({
                       : [...filters.materials, material];
                     onFiltersChange({ ...filters, materials: mats });
                   }}
-                  className="w-4 h-4 rounded border-border text-accent-primary focus:ring-accent-primary"
+                  className="w-4 h-4 rounded border-border text-gold focus:ring-gold"
                 />
                 <span className="text-sm text-text-secondary group-hover:text-text-primary transition-colors">
                   {material}
@@ -143,7 +143,7 @@ export default function FilterSidebar({
               className={cn(
                 'flex items-center gap-2 w-full px-2 py-1.5 rounded-md text-sm transition-colors',
                 filters.ratings === rating
-                  ? 'bg-accent-primary/10 text-accent-primary'
+                  ? 'bg-gold/10 text-gold'
                   : 'text-text-secondary hover:bg-bg-secondary'
               )}
             >
@@ -152,7 +152,7 @@ export default function FilterSidebar({
                   <Star
                     key={i}
                     size={14}
-                    className={i < rating ? 'fill-warning text-warning' : 'text-bg-tertiary'}
+                    className={i < rating ? 'fill-warning text-warning' : 'text-gold-light'}
                   />
                 ))}
               </div>
@@ -169,7 +169,7 @@ export default function FilterSidebar({
             type="checkbox"
             checked={filters.inStockOnly}
             onChange={() => onFiltersChange({ ...filters, inStockOnly: !filters.inStockOnly })}
-            className="w-4 h-4 rounded border-border text-accent-primary focus:ring-accent-primary"
+            className="w-4 h-4 rounded border-border text-gold focus:ring-gold"
           />
           <span className="text-sm text-text-secondary">Apenas em estoque</span>
         </label>

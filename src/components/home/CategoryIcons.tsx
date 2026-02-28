@@ -34,11 +34,11 @@ export default function CategoryIcons() {
                 href={`/categoria/${cat.slug}`}
                 className="flex flex-col items-center gap-2 min-w-[72px] group"
               >
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-bg-secondary flex items-center justify-center
-                  group-hover:bg-accent-primary group-hover:text-white transition-all duration-300 text-accent-primary">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-bg-secondary/70 flex items-center justify-center
+                  group-hover:bg-gold group-hover:text-white transition-all duration-300 text-gold">
                   <Icon size={28} />
                 </div>
-                <span className="text-xs md:text-sm text-text-secondary text-center font-medium whitespace-nowrap group-hover:text-accent-primary transition-colors">
+                <span className="text-xs md:text-sm text-text-secondary text-center font-medium whitespace-nowrap group-hover:text-gold transition-colors">
                   {cat.name}
                 </span>
               </Link>

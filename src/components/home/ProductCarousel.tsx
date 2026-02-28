@@ -44,7 +44,7 @@ export default function ProductCarousel({
             {viewAllLink && (
               <Link
                 href={viewAllLink}
-                className="text-sm text-accent-primary hover:text-accent-primary-hover font-medium transition-colors hidden md:block"
+                className="text-sm text-gold hover:text-gold-hover font-medium transition-colors hidden md:block"
               >
                 {viewAllLabel}
               </Link>
@@ -83,7 +83,7 @@ export default function ProductCarousel({
           <div className="mt-4 text-center md:hidden">
             <Link
               href={viewAllLink}
-              className="text-sm text-accent-primary hover:text-accent-primary-hover font-medium"
+              className="text-sm text-gold hover:text-gold-hover font-medium"
             >
               {viewAllLabel}
             </Link>

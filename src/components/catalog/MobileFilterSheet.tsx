@@ -33,12 +33,12 @@ export default function MobileFilterSheet({
       {/* Trigger button */}
       <button
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 px-3 py-2 border border-border rounded-md text-sm bg-white hover:border-accent-primary transition-colors lg:hidden"
+        className="flex items-center gap-2 px-3 py-2 border border-border rounded-md text-sm bg-white hover:border-gold transition-colors lg:hidden"
       >
         <Filter size={16} />
         <span>Filtros</span>
         {activeFilterCount > 0 && (
-          <span className="bg-accent-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+          <span className="bg-gold text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
             {activeFilterCount}
           </span>
         )}
@@ -64,7 +64,7 @@ export default function MobileFilterSheet({
             >
               {/* Handle */}
               <div className="flex justify-center py-2">
-                <div className="w-10 h-1 bg-bg-tertiary rounded-full" />
+                <div className="w-10 h-1 bg-gold-light rounded-full" />
               </div>
 
               {/* Header */}
@@ -93,7 +93,7 @@ export default function MobileFilterSheet({
               <div className="sticky bottom-0 p-4 bg-white border-t border-border">
                 <button
                   onClick={() => setOpen(false)}
-                  className="w-full bg-accent-primary text-white py-3 rounded-md text-sm font-medium hover:bg-accent-primary-hover transition-colors"
+                  className="w-full bg-gold text-white py-3 rounded-md text-sm font-medium hover:bg-gold-hover transition-colors"
                 >
                   Ver {resultCount} resultado{resultCount !== 1 ? 's' : ''}
                 </button>

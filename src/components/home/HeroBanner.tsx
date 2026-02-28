@@ -66,8 +66,8 @@ export default function HeroBanner() {
                 <Link href={banner.ctaLink}>
                   <Button
                     size="lg"
-                    variant={banner.bgColor === '#F5F3F0' ? 'primary' : 'secondary'}
-                    className={banner.bgColor !== '#F5F3F0' ? 'bg-white text-accent-primary hover:bg-gray-100' : ''}
+                    variant={banner.bgColor === '#F0EBE1' ? 'primary' : 'secondary'}
+                    className={banner.bgColor !== '#F0EBE1' ? 'bg-white text-gold hover:bg-bg-secondary' : ''}
                   >
                     {banner.cta}
                   </Button>

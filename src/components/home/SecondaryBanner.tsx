@@ -14,7 +14,7 @@ export default function SecondaryBanner({
   subtitle,
   cta,
   ctaLink,
-  bgColor = '#EDE9E3',
+  bgColor = '#F0EBE1',
 }: SecondaryBannerProps) {
   return (
     <section className="py-4 md:py-6">

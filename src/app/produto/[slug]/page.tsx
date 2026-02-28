@@ -47,7 +47,7 @@ export default function ProductPage() {
           </p>
           <Link
             href="/"
-            className="inline-block px-6 py-2.5 bg-accent-primary text-white rounded-md text-sm font-medium hover:bg-accent-primary-hover transition-colors"
+            className="inline-block px-6 py-2.5 bg-gold text-white rounded-md text-sm font-medium hover:bg-gold-hover transition-colors"
           >
             Voltar à loja
           </Link>

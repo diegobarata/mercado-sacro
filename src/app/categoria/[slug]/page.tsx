@@ -206,7 +206,7 @@ export default function CategoryPage() {
                       inStockOnly: false,
                     })
                   }
-                  className="mt-4 text-accent-primary hover:underline text-sm"
+                  className="mt-4 text-gold hover:underline text-sm"
                 >
                   Limpar todos os filtros
                 </button>

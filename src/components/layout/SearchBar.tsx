@@ -29,12 +29,12 @@ export default function SearchBar({ className, placeholder = 'Buscar artigos rel
           onChange={(e) => setQuery(e.target.value)}
           placeholder={placeholder}
           className="w-full rounded-lg border border-border bg-white pl-4 pr-12 py-2.5 text-sm text-text-primary
-            placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-accent-primary focus:border-transparent
+            placeholder:text-text-tertiary focus:outline-none focus:ring-2 focus:ring-gold focus:border-transparent
             transition-all duration-200"
         />
         <button
           type="submit"
-          className="absolute right-1 top-1/2 -translate-y-1/2 bg-accent-primary text-white p-2 rounded-md hover:bg-accent-primary-hover transition-colors"
+          className="absolute right-1 top-1/2 -translate-y-1/2 bg-gold text-white p-2 rounded-md hover:bg-gold-hover transition-colors"
           aria-label="Buscar"
         >
           <Search size={18} />

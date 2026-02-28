@@ -9,7 +9,7 @@ export default function Skeleton({ className, variant = 'rectangular' }: Skeleto
   return (
     <div
       className={cn(
-        'animate-pulse bg-bg-tertiary',
+        'animate-pulse bg-gold-light',
         {
           'h-4 rounded': variant === 'text',
           'rounded-lg': variant === 'rectangular',

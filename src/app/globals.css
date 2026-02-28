@@ -1,34 +1,40 @@
 @import "tailwindcss";
 
-/* ===== MERCADO SACRO — Design Tokens ===== */
+/* ===== SACRA HERITAGE — Design Tokens ===== */
+/* Paleta: Elegância tradicional, sofisticação litúrgica, modernidade minimalista */
 
 :root {
   /* Backgrounds */
-  --bg-primary: #FAFAFA;
-  --bg-secondary: #F5F3F0;
-  --bg-tertiary: #EDE9E3;
+  --bg-primary: #FAF7F2;
+  --bg-secondary: #F3EDE4;
+  --bg-dark: #0D0D0D;
+  --bg-dark-surface: #1C1C1E;
+  --bg-white: #FFFFFF;
 
-  /* Accent */
-  --accent-primary: #2C5282;
-  --accent-primary-hover: #1A365D;
-  --accent-secondary: #D4A843;
-  --accent-tertiary: #4A90D9;
+  /* Cores de Ouro (Gold Accent) */
+  --gold: #C9A84C;
+  --gold-hover: #B8923A;
+  --gold-light: #E8D5A0;
 
-  /* Text */
-  --text-primary: #1A1A2E;
-  --text-secondary: #4A5568;
-  --text-tertiary: #A0AEC0;
+  /* Tipografia */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-tertiary: #8A8A8A;
+  --text-white: #FFFFFF;
+
+  /* Cores de Acento */
+  --burgundy: #6B1D2A;
+  --sacred-green: #2D5A3D;
 
   /* Status */
-  --color-success: #38A169;
-  --color-warning: #D69E2E;
+  --color-success: #2D5A3D;
+  --color-warning: #C9A84C;
   --color-error: #C53030;
-  --color-sale: #E53E3E;
+  --color-sale: #6B1D2A;
 
   /* Layout */
-  --header-dark: #1A202C;
   --white: #FFFFFF;
-  --border: #E2E8F0;
+  --border: #E2DDD4;
 }
 
 @theme inline {
@@ -37,23 +43,27 @@
 
   --color-bg-primary: var(--bg-primary);
   --color-bg-secondary: var(--bg-secondary);
-  --color-bg-tertiary: var(--bg-tertiary);
+  --color-bg-dark: var(--bg-dark);
+  --color-bg-dark-surface: var(--bg-dark-surface);
+  --color-bg-white: var(--bg-white);
 
-  --color-accent-primary: var(--accent-primary);
-  --color-accent-primary-hover: var(--accent-primary-hover);
-  --color-accent-secondary: var(--accent-secondary);
-  --color-accent-tertiary: var(--accent-tertiary);
+  --color-gold: var(--gold);
+  --color-gold-hover: var(--gold-hover);
+  --color-gold-light: var(--gold-light);
 
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
   --color-text-tertiary: var(--text-tertiary);
+  --color-text-white: var(--text-white);
+
+  --color-burgundy: var(--burgundy);
+  --color-sacred-green: var(--sacred-green);
 
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);
   --color-error: var(--color-error);
   --color-sale: var(--color-sale);
 
-  --color-header-dark: var(--header-dark);
   --color-border: var(--border);
 
   --font-heading: var(--font-merriweather);
@@ -73,6 +83,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Selection */
+::selection {
+  background: var(--gold-light);
+  color: var(--text-primary);
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -83,12 +99,12 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--text-tertiary);
+  background: var(--gold-light);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--text-secondary);
+  background: var(--gold);
 }
 
 /* Hide scrollbar on horizontal scroll containers */

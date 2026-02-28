@@ -34,7 +34,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           >
             {/* Header */}
             <div className="flex items-center justify-between p-4 border-b border-border">
-              <span className="font-logo text-lg font-bold tracking-wider text-accent-primary">
+              <span className="font-logo text-lg font-bold tracking-wider text-gold">
                 MERCADO SACRO
               </span>
               <button onClick={onClose} className="p-1 hover:bg-bg-secondary rounded-lg" aria-label="Fechar menu">

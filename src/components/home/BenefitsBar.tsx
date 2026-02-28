@@ -18,7 +18,7 @@ export default function BenefitsBar() {
             const Icon = iconMap[benefit.icon];
             return (
               <div key={benefit.icon} className="flex flex-col items-center text-center gap-2">
-                {Icon && <Icon size={28} className="text-accent-primary" />}
+                {Icon && <Icon size={28} className="text-gold" />}
                 <div>
                   <p className="text-sm font-semibold text-text-primary">{benefit.title}</p>
                   <p className="text-xs text-text-tertiary">{benefit.description}</p>

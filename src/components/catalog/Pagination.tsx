@@ -61,7 +61,7 @@ export default function Pagination({
               'p-2 rounded-md transition-colors',
               currentPage === 1
                 ? 'text-text-tertiary/40 cursor-not-allowed'
-                : 'text-text-secondary hover:bg-bg-secondary hover:text-accent-primary'
+                : 'text-text-secondary hover:bg-bg-secondary hover:text-gold'
             )}
             aria-label="Página anterior"
           >
@@ -80,8 +80,8 @@ export default function Pagination({
                 className={cn(
                   'min-w-[36px] h-9 rounded-md text-sm font-medium transition-colors',
                   page === currentPage
-                    ? 'bg-accent-primary text-white'
-                    : 'text-text-secondary hover:bg-bg-secondary hover:text-accent-primary'
+                    ? 'bg-gold text-white'
+                    : 'text-text-secondary hover:bg-bg-secondary hover:text-gold'
                 )}
                 aria-current={page === currentPage ? 'page' : undefined}
               >
@@ -97,7 +97,7 @@ export default function Pagination({
               'p-2 rounded-md transition-colors',
               currentPage === totalPages
                 ? 'text-text-tertiary/40 cursor-not-allowed'
-                : 'text-text-secondary hover:bg-bg-secondary hover:text-accent-primary'
+                : 'text-text-secondary hover:bg-bg-secondary hover:text-gold'
             )}
             aria-label="Próxima página"
           >
@@ -110,7 +110,7 @@ export default function Pagination({
       {hasMore && onLoadMore && (
         <button
           onClick={onLoadMore}
-          className="px-6 py-2.5 border border-accent-primary text-accent-primary rounded-md text-sm font-medium hover:bg-accent-primary hover:text-white transition-colors"
+          className="px-6 py-2.5 border border-gold text-gold rounded-md text-sm font-medium hover:bg-gold hover:text-white transition-colors"
         >
           Carregar mais produtos
         </button>
